@@ -27,13 +27,13 @@ jobs:
       - name: build
         run: |
           docker build -t tailscale-android .
-          docker run -v ${PWD}:/build/tailscale-android --rm tailscale-android make mesh-debug.apk
+          docker run -v ${PWD}:/build/tailscale-android --rm tailscale-android make tailscale-debug.apk
  
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         if: ${{ success() }}
         with:
           tag_name: latest
-          files: mesh-debug.apk
+          files: tailscale-debug.apk
           release: true
           repository: ${{ github.actor }}/tailscale-android
