@@ -34,6 +34,6 @@ jobs:
         if: ${{ success() }}
         with:
           tag_name: latest
-          files: tailscale-debug.apk
+          files: mesh-debug.apk
           release: true
           repository: ${{ github.actor }}/tailscale-android
